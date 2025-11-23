@@ -1,0 +1,5 @@
+﻿.env
+.env.local
+*.zip
+Thumbs.db
+.DS_Store

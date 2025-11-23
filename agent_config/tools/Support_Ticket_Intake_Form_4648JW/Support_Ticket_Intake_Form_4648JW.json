@@ -1,0 +1,522 @@
+{
+  "spec": {
+    "kind": "flow",
+    "name": "Support_Ticket_Intake_Form_4648JW",
+    "initiators": [],
+    "description": "Explain what this tool captures, for whom, and why\u2014be concise but descriptive:",
+    "display_name": "Support Ticket Intake Form",
+    "input_schema": {
+      "type": "object",
+      "required": [
+        "sender_name",
+        "sender_email",
+        "email_subject",
+        "email_body"
+      ],
+      "properties": {
+        "email_body": {
+          "type": "string",
+          "description": "\"Describe the issue in detail\""
+        },
+        "sender_name": {
+          "type": "string",
+          "description": "\"Your full name\""
+        },
+        "sender_email": {
+          "type": "string",
+          "description": "\"your.email@example.com\""
+        },
+        "email_subject": {
+          "type": "string",
+          "description": "\"Brief description of issue\""
+        }
+      }
+    },
+    "output_schema": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "priority": {
+          "type": "string",
+          "description": ""
+        },
+        "email_body": {
+          "type": "string",
+          "description": ""
+        },
+        "sender_name": {
+          "type": "string",
+          "description": ""
+        },
+        "ticket_body": {
+          "type": "string",
+          "description": ""
+        },
+        "sender_email": {
+          "type": "string",
+          "description": ""
+        },
+        "email_subject": {
+          "type": "string",
+          "description": ""
+        },
+        "suggested_reply": {
+          "type": "string",
+          "description": ""
+        }
+      }
+    }
+  },
+  "edges": [
+    {
+      "id": "d949363c-2fd9-4009-bad2-14667963f918",
+      "end": "prompt_94dae71d-a3f5-4cbe-9d0e-9de07da8f2d6",
+      "start": "__start__"
+    },
+    {
+      "id": "258358c8-ad73-4c9e-b2fe-c9fc01645555",
+      "end": "prompt_805171f5-2367-41c8-9424-b38fb15479a6",
+      "start": "prompt_94dae71d-a3f5-4cbe-9d0e-9de07da8f2d6"
+    },
+    {
+      "id": "dbea026c-c292-488a-a5b4-f137c1eb793c",
+      "end": "Branch 1",
+      "start": "prompt_805171f5-2367-41c8-9424-b38fb15479a6"
+    },
+    {
+      "id": "d36b39d5-75af-4c0f-9b7e-e92f505aea5d",
+      "end": "tool_331cd2d0-2c53-4bfd-8909-dccb6c9276da",
+      "start": "Branch 1",
+      "display_name": "Condition 2 (NORMAL)"
+    },
+    {
+      "id": "6d4bbc71-2a1b-4752-a2b9-2143e1e9c041",
+      "end": "tool_e5e2e780-32d7-4fc5-ba0f-18da0cab9e80",
+      "start": "Branch 1",
+      "display_name": "Condition 1 (URGENT)"
+    },
+    {
+      "id": "98f48b03-6afb-4712-a2a9-7366000fcb6d",
+      "end": "tool_099528bd-2e77-4549-8f1c-5074d01a7aa6",
+      "start": "Branch 1",
+      "display_name": "Condition 3 (LOW)"
+    },
+    {
+      "id": "f9eb1948-f64d-450f-9f19-838ac6471fc6",
+      "end": "63db966e-e792-47c4-866f-deed1a9e54be",
+      "start": "Branch 1",
+      "display_name": "DEFAULT"
+    },
+    {
+      "id": "87b7ed4d-6c19-4668-a422-135c49f158df",
+      "end": "__end__",
+      "start": "tool_e5e2e780-32d7-4fc5-ba0f-18da0cab9e80"
+    },
+    {
+      "id": "975ea7dd-958e-4281-be4a-014fe670c2a2",
+      "end": "__end__",
+      "start": "tool_331cd2d0-2c53-4bfd-8909-dccb6c9276da"
+    },
+    {
+      "id": "15c3efc2-141e-4a06-89da-2a561db5ed99",
+      "end": "__end__",
+      "start": "tool_099528bd-2e77-4549-8f1c-5074d01a7aa6"
+    }
+  ],
+  "nodes": {
+    "__end__": {
+      "spec": {
+        "kind": "end",
+        "name": "__end__",
+        "position": {
+          "x": -349.0693455130799,
+          "y": 483.56864787921336
+        }
+      }
+    },
+    "Branch 1": {
+      "spec": {
+        "kind": "branch",
+        "name": "Branch 1",
+        "position": {
+          "x": -290.8638963129221,
+          "y": -179.66396806885427
+        },
+        "evaluator": {
+          "conditions": [
+            {
+              "default": false,
+              "edge_id": "6d4bbc71-2a1b-4752-a2b9-2143e1e9c041",
+              "metadata": {
+                "id": "670d6b3c-86a8-4fd9-bcdd-55efe3cab882",
+                "conditions": []
+              },
+              "expression": "priority == \"URGENT\""
+            },
+            {
+              "default": false,
+              "edge_id": "d36b39d5-75af-4c0f-9b7e-e92f505aea5d",
+              "metadata": {
+                "id": "8bcabe85-06fc-44df-864e-bb918425a5d3",
+                "conditions": []
+              },
+              "expression": "priority == \"NORMAL\""
+            },
+            {
+              "default": false,
+              "edge_id": "98f48b03-6afb-4712-a2a9-7366000fcb6d",
+              "metadata": {
+                "id": "d2b7847d-d8cd-41c3-af51-17523addb013",
+                "conditions": []
+              },
+              "expression": "priority == \"LOW\""
+            },
+            {
+              "default": false,
+              "edge_id": "61602a22-bd8c-4177-8f52-eff47b3720af"
+            },
+            {
+              "default": false,
+              "edge_id": "46502acd-b2f0-448e-8bc5-e8da62bfb5b2"
+            },
+            {
+              "default": false,
+              "edge_id": "b0cdecef-2cea-48a2-a29b-fb16b39dc429"
+            },
+            {
+              "default": false,
+              "edge_id": "10cd680e-bcac-4cfc-8e9f-3d7108ffdb86"
+            },
+            {
+              "default": true,
+              "edge_id": "f9eb1948-f64d-450f-9f19-838ac6471fc6",
+              "metadata": {
+                "id": "f1ee903d-1c8c-49e8-8aa4-d36ecb6e31a8",
+                "conditions": []
+              },
+              "expression": ""
+            }
+          ]
+        },
+        "display_name": "Branch 1",
+        "match_policy": "FIRST_MATCH"
+      }
+    },
+    "__start__": {
+      "spec": {
+        "kind": "start",
+        "name": "__start__",
+        "position": {
+          "x": 309.16421957119843,
+          "y": -373.0875608576031
+        }
+      }
+    },
+    "63db966e-e792-47c4-866f-deed1a9e54be": {
+      "spec": {
+        "kind": "placeholder",
+        "name": "63db966e-e792-47c4-866f-deed1a9e54be",
+        "position": {
+          "x": -910.8753054084386,
+          "y": -340.802423176824
+        },
+        "display_name": "",
+        "placeholder_kind": "ghost"
+      }
+    },
+    "tool_099528bd-2e77-4549-8f1c-5074d01a7aa6": {
+      "spec": {
+        "kind": "tool",
+        "name": "tool_099528bd-2e77-4549-8f1c-5074d01a7aa6",
+        "tool": "Untitled_8090SJ:b2d7505e-b7b8-416d-9ad0-e16a762945e7",
+        "position": {
+          "x": -924.916315364635,
+          "y": 50.426427123644714
+        },
+        "description": "No description",
+        "display_name": "Slack LOW Notification",
+        "input_schema": {
+          "type": "object",
+          "properties": {}
+        },
+        "output_schema": {
+          "type": "object",
+          "properties": {}
+        },
+        "error_handler_config": {
+          "max_retries": 0,
+          "error_message": "Something went wrong while running 'Slack LOW Notification'",
+          "retry_interval": 1000
+        }
+      },
+      "input_map": {
+        "spec": {
+          "maps": [],
+          "name": "",
+          "fallback_strategy": "ask_the_user"
+        }
+      }
+    },
+    "tool_331cd2d0-2c53-4bfd-8909-dccb6c9276da": {
+      "spec": {
+        "kind": "tool",
+        "name": "tool_331cd2d0-2c53-4bfd-8909-dccb6c9276da",
+        "tool": "Untitled_8090SJ:b2d7505e-b7b8-416d-9ad0-e16a762945e7",
+        "position": {
+          "x": -557.4361277245823,
+          "y": 22.58989218781113
+        },
+        "description": "No description",
+        "display_name": "Slack NORMAL Notification",
+        "input_schema": {
+          "type": "object",
+          "properties": {}
+        },
+        "output_schema": {
+          "type": "object",
+          "properties": {}
+        },
+        "error_handler_config": {
+          "max_retries": 0,
+          "error_message": "Something went wrong while running 'Slack NORMAL Notification'",
+          "retry_interval": 1000
+        }
+      },
+      "input_map": {
+        "spec": {
+          "maps": [],
+          "name": "",
+          "fallback_strategy": "ask_the_user"
+        }
+      }
+    },
+    "tool_e5e2e780-32d7-4fc5-ba0f-18da0cab9e80": {
+      "spec": {
+        "kind": "tool",
+        "name": "tool_e5e2e780-32d7-4fc5-ba0f-18da0cab9e80",
+        "tool": "Untitled_8090SJ:b2d7505e-b7b8-416d-9ad0-e16a762945e7",
+        "position": {
+          "x": -193.6483472957807,
+          "y": 94.96475845385277
+        },
+        "description": "No description",
+        "display_name": "Slack URGENT Notification",
+        "input_schema": {
+          "type": "object",
+          "properties": {}
+        },
+        "output_schema": {
+          "type": "object",
+          "properties": {}
+        },
+        "error_handler_config": {
+          "max_retries": 0,
+          "error_message": "Something went wrong while running 'Slack URGENT Notification'",
+          "retry_interval": 1000
+        }
+      },
+      "input_map": {
+        "spec": {
+          "maps": [],
+          "name": "",
+          "fallback_strategy": "ask_the_user"
+        }
+      }
+    },
+    "prompt_805171f5-2367-41c8-9424-b38fb15479a6": {
+      "spec": {
+        "llm": "watsonx/ibm/granite-3-8b-instruct",
+        "kind": "prompt",
+        "name": "prompt_805171f5-2367-41c8-9424-b38fb15479a6",
+        "metadata": {
+          "creativity_slider_position": "5",
+          "creativity_slider_manual_override": false
+        },
+        "position": {
+          "x": 325.58091416275994,
+          "y": -107.08113373395844
+        },
+        "test_data": [
+          {
+            "value": "",
+            "source": "self.input.priority"
+          },
+          {
+            "value": "",
+            "source": "self.input.sender_name"
+          },
+          {
+            "value": "",
+            "source": "self.input.email_subject"
+          },
+          {
+            "value": "",
+            "source": "self.input.email_body"
+          }
+        ],
+        "description": "",
+        "user_prompt": "Write a support reply email:\nPriority: {{self.input.{self.input.priority}}}\nCustomer: {{self.input.{self.input.sender_name}}}\nSubject: {{self.input.{self.input.email_subject}}}\nIssue: {{self.input.{self.input.email_body}}}\nResponse:",
+        "display_name": "Generative prompt",
+        "input_schema": {
+          "type": "object",
+          "required": [
+            "priority",
+            "sender_name",
+            "email_subject",
+            "email_body"
+          ],
+          "properties": {
+            "priority": {
+              "type": "string",
+              "description": ""
+            },
+            "email_body": {
+              "type": "string",
+              "description": ""
+            },
+            "sender_name": {
+              "type": "string",
+              "description": ""
+            },
+            "email_subject": {
+              "type": "string",
+              "description": ""
+            }
+          }
+        },
+        "output_schema": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string",
+              "description": "The output result as a string."
+            }
+          }
+        },
+        "system_prompt": "You are a professional customer support agent. Generate a concise, empathetic response to a support ticket. Adjust your tone and message according to the priority:\n- URGENT: Immediate attention, apologetic and reassuring.\n- NORMAL: Helpful, professional.\n- LOW: Appreciative, friendly.\n",
+        "llm_parameters": {
+          "top_k": 30,
+          "top_p": 0.7,
+          "temperature": 0.4,
+          "max_new_tokens": 200,
+          "min_new_tokens": 50,
+          "stop_sequences": [
+            "Human",
+            "AI"
+          ]
+        },
+        "prompt_examples": [],
+        "error_handler_config": {
+          "max_retries": 0,
+          "error_message": "Something went wrong while running 'Generative prompt'",
+          "retry_interval": 1000
+        },
+        "include_agent_context": false
+      },
+      "input_map": {
+        "spec": {
+          "maps": [],
+          "name": "",
+          "fallback_strategy": "ask_the_user"
+        }
+      }
+    },
+    "prompt_94dae71d-a3f5-4cbe-9d0e-9de07da8f2d6": {
+      "spec": {
+        "llm": "watsonx/ibm/granite-3-8b-instruct",
+        "kind": "prompt",
+        "name": "prompt_94dae71d-a3f5-4cbe-9d0e-9de07da8f2d6",
+        "metadata": {
+          "creativity_slider_position": "5",
+          "creativity_slider_manual_override": false
+        },
+        "position": {
+          "x": 17.29599999999982,
+          "y": -384.12847656250005
+        },
+        "test_data": [
+          {
+            "value": "",
+            "source": "self.input.email_subject"
+          },
+          {
+            "value": "",
+            "source": "self.input.email_body"
+          }
+        ],
+        "description": "",
+        "user_prompt": "Classify this support ticket:\nSubject: {{self.input.{self.input.email_subject}}}\nBody: {{self.input.{self.input.email_body}}}\nPriority:",
+        "display_name": "Generative prompt",
+        "input_schema": {
+          "type": "object",
+          "required": [
+            "email_subject",
+            "email_body"
+          ],
+          "properties": {
+            "email_body": {
+              "type": "string",
+              "description": ""
+            },
+            "email_subject": {
+              "type": "string",
+              "description": ""
+            }
+          }
+        },
+        "output_schema": {
+          "type": "object",
+          "properties": {
+            "priority": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "description": ""
+            }
+          }
+        },
+        "system_prompt": "You are an expert support ticket classifier. Analyze support tickets and classify them into exactly ONE priority level.\nPRIORITY LEVELS:\n- URGENT: Immediate attention, e.g. system outages, security breaches, data loss, revenue-impacting issues, customer data at risk.\n- NORMAL: Bug reports, account access issues, feature malfunctions, performance degradation.\n- LOW: Feature requests, general questions, thank you messages, feedback, documentation issues.\nReturn ONLY the priority level as a single word: \u201cURGENT\u201d, \u201cNORMAL\u201d, or \u201cLOW\u201d.\n",
+        "llm_parameters": {
+          "top_k": 30,
+          "top_p": 0.7,
+          "temperature": 0.4,
+          "max_new_tokens": 200,
+          "min_new_tokens": 50,
+          "stop_sequences": [
+            "Human",
+            "AI"
+          ]
+        },
+        "prompt_examples": [],
+        "error_handler_config": {
+          "max_retries": 0,
+          "error_message": "Something went wrong while running 'Generative prompt'",
+          "retry_interval": 1000
+        },
+        "include_agent_context": false
+      },
+      "input_map": {
+        "spec": {
+          "maps": [],
+          "name": "",
+          "fallback_strategy": "ask_the_user"
+        }
+      }
+    }
+  },
+  "schemas": {},
+  "metadata": {
+    "source_kind": "ui",
+    "agent_conversation_memory_turns_limit": 0
+  },
+  "output_map": {
+    "spec": {
+      "maps": [],
+      "name": "",
+      "fallback_strategy": "ask_the_user"
+    }
+  }
+}

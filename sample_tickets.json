@@ -1,0 +1,163 @@
+{
+  "test_cases": [
+    {
+      "ticket_id": 1,
+      "sender_name": "Sarah Johnson",
+      "sender_email": "sarah.j@techcorp.com",
+      "subject": "CRITICAL: Production database offline - 500 users affected",
+      "body": "Our production database went down 10 minutes ago. All customer-facing applications are unavailable. We have 500+ active users unable to access the system. This is causing significant revenue loss. URGENT assistance needed!",
+      "expected_priority": "URGENT",
+      "expected_channel": "#urgent-tickets",
+      "keywords": [
+        "CRITICAL",
+        "database",
+        "offline",
+        "revenue loss",
+        "production"
+      ]
+    },
+    {
+      "ticket_id": 2,
+      "sender_name": "Mike Chen",
+      "sender_email": "m.chen@startup.io",
+      "subject": "Security Alert: Suspicious login attempts detected",
+      "body": "We've noticed unusual login attempts from multiple IP addresses in the past hour. Concerned about potential data breach. Need immediate security review and possible account lockdown.",
+      "expected_priority": "URGENT",
+      "expected_channel": "#urgent-tickets",
+      "keywords": [
+        "Security",
+        "breach",
+        "data",
+        "suspicious",
+        "immediate"
+      ]
+    },
+    {
+      "ticket_id": 3,
+      "sender_name": "Emily Rodriguez",
+      "sender_email": "emily.r@design.co",
+      "subject": "Cannot reset password - getting error message",
+      "body": "Hi team, I'm trying to reset my password but keep getting an 'Invalid token' error. I've tried 3 times. Can you help? I need to access my account for a client meeting tomorrow.",
+      "expected_priority": "NORMAL",
+      "expected_channel": "#support-queue",
+      "keywords": [
+        "password",
+        "error",
+        "access",
+        "account"
+      ]
+    },
+    {
+      "ticket_id": 4,
+      "sender_name": "David Kim",
+      "sender_email": "d.kim@consulting.com",
+      "subject": "Bug: Export function downloads blank CSV file",
+      "body": "When I try to export my project data to CSV, the file downloads but it's completely empty. This happens consistently. Using Chrome browser, version 120. Not urgent but annoying!",
+      "expected_priority": "NORMAL",
+      "expected_channel": "#support-queue",
+      "keywords": [
+        "bug",
+        "export",
+        "function",
+        "not urgent"
+      ]
+    },
+    {
+      "ticket_id": 5,
+      "sender_name": "Lisa Patel",
+      "sender_email": "lisa.p@ecommerce.net",
+      "subject": "Feature Request: Dark mode for dashboard",
+      "body": "Would love to see a dark mode option for the dashboard. I work late nights and the bright interface strains my eyes. No rush, just a suggestion for future updates!",
+      "expected_priority": "LOW",
+      "expected_channel": "#general-feedback",
+      "keywords": [
+        "feature request",
+        "dark mode",
+        "no rush",
+        "suggestion"
+      ]
+    },
+    {
+      "ticket_id": 6,
+      "sender_name": "James Wilson",
+      "sender_email": "j.wilson@finance.org",
+      "subject": "Thank you for excellent support!",
+      "body": "Just wanted to send a quick note to thank your team for resolving my integration issue yesterday. The support was fast and professional. Keep up the great work!",
+      "expected_priority": "LOW",
+      "expected_channel": "#general-feedback",
+      "keywords": [
+        "thank you",
+        "feedback",
+        "appreciation"
+      ]
+    },
+    {
+      "ticket_id": 7,
+      "sender_name": "Priya Sharma",
+      "sender_email": "priya.s@healthcare.in",
+      "subject": "URGENT: Payment gateway failing - losing customers",
+      "body": "Our payment gateway has been failing for the past 30 minutes. Multiple customers reporting they can't complete purchases. This is a critical revenue-impacting issue. We need this fixed ASAP!",
+      "expected_priority": "URGENT",
+      "expected_channel": "#urgent-tickets",
+      "keywords": [
+        "URGENT",
+        "payment",
+        "failing",
+        "revenue",
+        "critical",
+        "ASAP"
+      ]
+    },
+    {
+      "ticket_id": 8,
+      "sender_name": "Tom Anderson",
+      "sender_email": "t.anderson@retail.com",
+      "subject": "Question about API rate limits",
+      "body": "Hi, I'm building an integration and wanted to understand the API rate limits better. The documentation mentions 1000 requests/hour but I'm not clear if that's per user or per app. Thanks!",
+      "expected_priority": "LOW",
+      "expected_channel": "#general-feedback",
+      "keywords": [
+        "question",
+        "documentation",
+        "inquiry"
+      ]
+    },
+    {
+      "ticket_id": 9,
+      "sender_name": "Nina Okonkwo",
+      "sender_email": "nina.o@logistics.za",
+      "subject": "Dashboard loading very slowly since update",
+      "body": "After yesterday's system update, our dashboard takes 15-20 seconds to load instead of the usual 2-3 seconds. It's affecting team productivity but not completely blocking work.",
+      "expected_priority": "NORMAL",
+      "expected_channel": "#support-queue",
+      "keywords": [
+        "performance",
+        "slow",
+        "update",
+        "productivity"
+      ]
+    },
+    {
+      "ticket_id": 10,
+      "sender_name": "Alex Nkomo",
+      "sender_email": "alex.n@media.co.za",
+      "subject": "DATA LOSS: All customer records disappeared!",
+      "body": "EMERGENCY! All our customer records vanished from the system 5 minutes ago. We had 2,000+ records and now showing zero. This is catastrophic for our business. HELP IMMEDIATELY!",
+      "expected_priority": "URGENT",
+      "expected_channel": "#urgent-tickets",
+      "keywords": [
+        "DATA LOSS",
+        "EMERGENCY",
+        "catastrophic",
+        "disappeared",
+        "IMMEDIATELY"
+      ]
+    }
+  ],
+  "summary": {
+    "total_tickets": 10,
+    "urgent": 4,
+    "normal": 3,
+    "low": 3
+  }
+}

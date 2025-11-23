@@ -1,0 +1,48 @@
+{
+  "spec": {
+    "kind": "flow",
+    "initiators": [],
+    "description": "No description",
+    "display_name": "Untitled"
+  },
+  "edges": [
+    {
+      "end": "__end__",
+      "start": "__start__"
+    }
+  ],
+  "nodes": {
+    "__end__": {
+      "spec": {
+        "kind": "end",
+        "name": "__end__",
+        "position": {
+          "x": 0,
+          "y": 200
+        }
+      }
+    },
+    "__start__": {
+      "spec": {
+        "kind": "start",
+        "name": "__start__",
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    }
+  },
+  "schemas": {},
+  "metadata": {
+    "source_kind": "ui",
+    "is_under_specified": true
+  },
+  "output_map": {
+    "spec": {
+      "maps": [],
+      "name": "",
+      "fallback_strategy": "ask_the_user"
+    }
+  }
+}

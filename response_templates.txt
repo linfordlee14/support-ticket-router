@@ -1,0 +1,74 @@
+# Support Ticket Response Templates
+
+## URGENT Priority Template
+Subject: [URGENT] Ticket #{{ticket_id}} - {{subject}}
+
+Dear {{sender_name}},
+
+Thank you for reporting this critical issue. We have immediately escalated your ticket to our senior technical team.
+
+**Ticket Details:**
+- Ticket ID: #{{ticket_id}}
+- Priority: URGENT
+- Assigned to: Senior Support Team
+- Estimated Response Time: Within 2 hours
+
+Our team is investigating the issue with highest priority. You will receive an update within the next 2 hours, or sooner if resolved.
+
+We apologize for any inconvenience and appreciate your patience.
+
+Best regards,  
+Automated Support System  
+Powered by Linfy Tech Solutions
+
+---
+
+## NORMAL Priority Template
+Subject: Ticket #{{ticket_id}} - {{subject}}
+
+Dear {{sender_name}},
+
+Thank you for contacting support. We have received your ticket and assigned it to our technical team.
+
+**Ticket Details:**
+- Ticket ID: #{{ticket_id}}
+- Priority: NORMAL
+- Expected Resolution Time: 24-48 hours
+
+Our team will investigate your issue and get back to you with a solution or update within the next 1-2 business days.
+
+If your issue becomes more urgent, please reply to this email with "URGENT" in the subject line.
+
+Best regards,  
+Support Team  
+Powered by Linfy Tech Solutions
+
+---
+
+## LOW Priority Template
+Subject: Ticket #{{ticket_id}} - {{subject}}
+
+Dear {{sender_name}},
+
+Thank you for reaching out! We've received your {{ticket_type}}.
+
+**Ticket Details:**
+- Ticket ID: #{{ticket_id}}
+- Priority: LOW
+- Review Timeline: 3-7 business days
+
+{{#if_feedback}}
+We appreciate your feedback and will review it with our product team.
+{{/if_feedback}}
+
+{{#if_feature_request}}
+Your feature request has been logged and will be considered for future updates.
+{{/if_feature_request}}
+
+{{#if_inquiry}}
+We'll respond to your inquiry within one week.
+{{/if_inquiry}}
+
+Best regards,  
+Support Team  
+Powered by Linfy Tech Solutions
